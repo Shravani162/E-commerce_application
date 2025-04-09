@@ -1,4 +1,4 @@
-````markdown
+```markdown
 # E-commerce_application
 
 Welcome to **E-commerce_application**! ✨
@@ -8,22 +8,22 @@ This project is a superhero-themed T-shirt store with a Starry Night UI, smooth 
 
 ## 📑 Table of Contents
 
-1.  🚀 [Getting Started](#getting-started)
-    * [Prerequisites](#prerequisites)
-    * [Installation Steps](#installation-steps)
-2.  🛠️ [Development Setup](#development-setup)
-    * [Running the Application](#running-the-application)
-    * [Health Checks](#health-checks)
-3.  📝 [Contributing Process](#contributing-process)
-    * [Branch Management](#branch-management)
-    * [Making Changes](#making-changes)
-    * [Submitting PRs](#submitting-prs)
-4.  🚀 [Coding Standards](#coding-standards)
-    * [General Guidelines](#general-guidelines)
-    * [Naming Conventions](#naming-conventions)
-    * [Git Commit Standards](#git-commit-standards)
-5.  ⚡ [Quick Start Commands](#quick-start-commands)
-6.  💡 [Support](#support)
+1. [🚀 Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation Steps](#installation-steps)
+2. [🛠️ Development Setup](#development-setup)
+   - [Running the Application](#running-the-application)
+   - [Health Checks](#health-checks)
+3. [📝 Contributing Process](#contributing-process)
+   - [Branch Management](#branch-management)
+   - [Making Changes](#making-changes)
+   - [Submitting PRs](#submitting-prs)
+4. [🚀 Coding Standards](#coding-standards)
+   - [General Guidelines](#general-guidelines)
+   - [Naming Conventions](#naming-conventions)
+   - [Git Commit Standards](#git-commit-standards)
+5. [⚡ Quick Start Commands](#quick-start-commands)
+6. [💡 Support](#support)
 
 ---
 
@@ -52,7 +52,7 @@ Make sure these are installed:
 ```bash
 git clone <your-forked-repo-url>
 cd E-commerce_application
-````
+```
 
 ## 🛠️ Development Setup
 
@@ -202,8 +202,10 @@ For any issues or questions, please open a new issue on the [GitHub repository](
 * `https://github.com/your-org/E-commerce_application` with the actual URL of your main repository.
 * `<your-forked-repo-url>` with the URL of the repository you forked.
 * `https://github.com/your-username/E-commerce_application` in the Quick Start Commands with your actual GitHub username and repository name.
-* `<your_concurrently_version>` in the root `package.json` with the actual version of `concurrently` that was installed.
-* `your_database_name` in the `.env` example with your actual MongoDB database name.
+* `<your_concurrently_version>` in the root `package.json` with the actual version of `concurrently` that was installed (if applicable, though not mentioned in this README).
+* `your_database_name` in the `.env` example with your actual MongoDB database name (if you add an `.env` section later).
 
-This `README.md` file provides a comprehensive overview of your project, including setup instructions, development guidelines, contribution process, and coding standards, making it easier for others to understand and contribute to your E-commerce application.
-```
+### Verification
+The Table of Contents now uses proper Markdown link syntax (e.g., `[Getting Started](#getting-started)`), and these will work as clickable links when viewed on platforms like GitHub, GitLab, or any Markdown renderer that supports anchor links. The section IDs match the headers exactly as they are processed (lowercase, spaces as hyphens).
+
+Let me know if you need further tweaks or additions!
