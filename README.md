@@ -1,228 +1,209 @@
+````markdown
 # E-commerce_application
 
-
-Welcome to **E-commerce_application**!✨ This project is a superhero-themed T-shirt store with a Starry Night UI, offering smooth shopping, admin control, and a secure checkout system. This guide walks you through setup, development, and contribution practices.
+Welcome to **E-commerce_application**! ✨
+This project is a superhero-themed T-shirt store with a Starry Night UI, smooth shopping experience, admin control, and a secure checkout system.
 
 ---
 
 ## 📑 Table of Contents
 
-1. 🚀 [Getting Started](#getting-started)
-   - [Prerequisites](#prerequisites)
-   - [Installation Steps](#installation-steps)
-2. 🛠️ [Development Setup](#development-setup)
-   - [Running the Application](#running-the-application)
-   - [Health Checks](#health-checks)
-3. 📝 [Contributing Process](#contributing-process)
-   - [Branch Management](#branch-management)
-   - [Making Changes](#making-changes)
-   - [Submitting PRs](#submitting-prs)
-4. 🚀 [Coding Standards](#coding-standards)
-   - [General Guidelines](#general-guidelines)
-   - [Naming Conventions](#naming-conventions)
-   - [Git Commit Standards](#git-commit-standards)
-5. ⚡ [Quick Start Commands](#quick-start-commands)
-6. 💡 [Support](#support)
+1.  🚀 [Getting Started](#getting-started)
+    * [Prerequisites](#prerequisites)
+    * [Installation Steps](#installation-steps)
+2.  🛠️ [Development Setup](#development-setup)
+    * [Running the Application](#running-the-application)
+    * [Health Checks](#health-checks)
+3.  📝 [Contributing Process](#contributing-process)
+    * [Branch Management](#branch-management)
+    * [Making Changes](#making-changes)
+    * [Submitting PRs](#submitting-prs)
+4.  🚀 [Coding Standards](#coding-standards)
+    * [General Guidelines](#general-guidelines)
+    * [Naming Conventions](#naming-conventions)
+    * [Git Commit Standards](#git-commit-standards)
+5.  ⚡ [Quick Start Commands](#quick-start-commands)
+6.  💡 [Support](#support)
+
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-Ensure you have the following tools installed:
+Make sure these are installed:
 
-- **Node.js** (Latest LTS) – [Download](https://nodejs.org/)
-- **MongoDB** – [Download](https://www.mongodb.com/try/download/community)
-- **Git** – [Download](https://git-scm.com/)
-- **Stripe Account** (For payments) – [Stripe Setup](https://stripe.com)
+-   **Node.js (LTS)** → [Download](https://nodejs.org/)
+-   **MongoDB** → [Download](https://www.mongodb.com/try/download/community)
+-   **Git** → [Download](https://git-scm.com/)
+-   **Stripe Account** → [Setup](https://stripe.com)
+
+---
 
 ### Installation Steps
 
-#### Forking the Repository
+#### 1. Fork the Repository
 
-1. Visit the [E-commerce Repository](https://github.com/your-username/E-Commerce_application).
-2. Click on **Fork** (top right corner).
-3. Select **Create a new fork**.
-4. Choose **all branches**.
-5. Click **Create fork**.
-   
-#### Cloning the Repository
+1.  Visit the [Main Repository](https://github.com/your-org/E-commerce_application)
+2.  Click **Fork** → Select **all branches** → Click **Create Fork**
 
-1. Navigate to your forked repository on GitHub.
-2. Click on **Code** and copy the repository URL.
-3. Open a terminal and navigate to your desired directory.
-4. Run the following command:
+#### 2. Clone Your Fork
 
 ```bash
- git clone <your-forked-repo-url>
-```
-
-5. Change into the project directory:
-
-```bash
+git clone <your-forked-repo-url>
 cd E-commerce_application
-```
-
----
+````
 
 ## 🛠️ Development Setup
 
 ### Running the Application
 
-1. Install project dependencies:
+To start both client and server together (recommended):
 
 ```bash
 npm install
+npm run dev
 ```
 
-2. Set up your **.env** file using the `.env.example` template.
+This uses `concurrently` to run both:
 
-3. Start the **backend**:
+  - **Client:** `cd client && npm run dev`
+  - **Server:** `cd server && npm run dev`
 
-```bash
-npm run server
-```
-
-4. Start the **frontend**:
-
-```bash
-npm run client
-```
+✅ You can still run them individually by navigating into `/client` or `/server`.
 
 ### Health Checks
 
-Verify if the backend is running:
+Test backend connection:
 
 ```bash
 curl -X GET http://localhost:5000/api/health
 ```
 
-The expected response:
+Expected Response:
 
 ```json
-{"status":"ok"}
+{"status": "ok"}
 ```
-
----
 
 ## 📝 Contributing Process
 
 ### Branch Management
 
-Create a new branch based on the feature you're working on:
+🚨 **Never push directly to `main` or `develop`**
+
+**Step 1:** Always pull the latest `develop` branch
 
 ```bash
-git checkout -b feature/<your-feature-name>
+git checkout develop
+git pull origin develop
 ```
 
-Keep your branch updated:
+**Step 2:** Create your feature branch
 
 ```bash
-git pull origin main
+git checkout -b feature/your-feature-name
 ```
 
 ### Making Changes
 
-1. Make code changes.
-2. Stage the changes:
+1.  Write your code.
 
-```bash
-git add .
-```
+2.  Stage your changes:
 
-3. Commit with a meaningful message:
+    ```bash
+    git add .
+    ```
 
-```bash
-git commit -m "feat: add product search functionality"
-```
+3.  Commit with a clear message:
 
-4. Push to your branch:
+    ```bash
+    git commit -m "feat(cart): add add-to-cart functionality"
+    ```
 
-```bash
-git push origin feature/<your-feature-name>
-```
+4.  Push your feature branch:
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
 
 ### Submitting PRs
 
-1. Go to the repository on GitHub.
-2. Click **New Pull Request**.
-3. Select `main` as the base branch.
-4. Add a descriptive **title** and **details**.
-5. Link any related **issues**.
-6. Click **Create Pull Request**.
-
----
+1.  Go to GitHub → Click **“Compare & Pull Request”**
+2.  Set:
+      * **Base branch** → `develop`
+      * **Compare** → `feature/your-feature-name`
+3.  Add a description, screenshots (if applicable), and linked issues.
+4.  Click **Create Pull Request**.
 
 ## 🚀 Coding Standards
 
 ### General Guidelines
 
-- Follow MVC and component-based architecture.
-- Keep UI, logic, and styles separated and reusable.
-- Write secure backend code (input validation, auth checks).
-- Clean up unused code and remove console logs.
+  - Follow MVC/component-based architecture.
+  - Keep logic, UI, and styles clean and separate.
+  - Secure backend (input validations, auth checks).
+  - Remove unused code, avoid `console.log` statements in production code.
 
 ### Naming Conventions
 
-- **Files & Folders:** `kebab-case` (e.g., `task-list.js`, `user-profile.js`)
-- **Variables & Functions:** `camelCase` (e.g., `fetchUserData`)
-- **React Components & Classes:** `PascalCase` (e.g., `TaskManager`)
-- **Database Fields:** `snake_case` (e.g., `task_priority`)
-- **Constants:** `UPPER_CASE` (e.g., `DEFAULT_PAGE_SIZE`)
+| Element           | Style        | Example             |
+| ----------------- | -------------| ------------------- |
+| Files & Folders   | `camelCase`  | `orderList.js`      |
+| Variables/Funcs   | `camelCase`  | `fetchUserDetails()`|
+| React Components  | `PascalCase` | `OrderDetails.jsx`  |
+| DB Fields         | `snake_case` | `product_price`     |
+| Constants         | `UPPER_CASE` | `MAX_CART_ITEMS`    |
 
 ### Git Commit Standards
 
 Use [Conventional Commits](https://www.conventionalcommits.org/):
 
-#### Common Commit Types:
-
-- `feat:` New feature (`feat: add user authentication`)
-- `fix:` Bug fix (`fix: resolve login issue`)
-- `chore:` Maintenance (`chore: update dependencies`)
-- `docs:` Documentation update (`docs: improve README`)
-- `style:` Code style changes (`style: reformat code`)
-- `refactor:` Code improvement without new functionality
-- `test:` Adding or updating tests
-
-Example commits:
-
-```bash
-git commit -m "feat: integrate Stripe checkout"
-git commit -m "fix: correct cart quantity logic"
-git commit -m "docs: update README setup section"
-
-
----
+  - `feat`: new feature → `feat(login): add JWT auth`
+  - `fix`: bug fix → `fix(cart): fix quantity update bug`
+  - `refactor`: code improvement (no feature change)
+  - `style`: CSS/UI changes only
+  - `docs`: README or documentation changes
+  - `chore`: project setup or tooling changes
+  - `test`: adding/updating tests
 
 ## ⚡ Quick Start Commands
 
 ```bash
-# Clone and enter project
-git clone https://github.com/your-username/E-commerce_application.git
+# Clone and go into project
+git clone [https://github.com/your-username/E-commerce_application.git](https://github.com/your-username/E-commerce_application.git)
 cd E-commerce_application
 
-# Install dependencies
+# Install dependencies and run both frontend & backend
 npm install
+npm run dev
 
-# Start backend
-npm run server
+# To create a feature branch from develop
+git checkout develop
+git pull origin develop
+git checkout -b feature/your-feature-name
 
-# Start frontend
-npm run client
-
-# Create a new feature branch
-git checkout -b feature/add-to-cart
-
-# Commit and push changes
+# Commit and push your work
 git add .
-git commit -m "feat: add to cart logic"
-git push origin feature/add-to-cart
+git commit -m "feat: describe your work"
+git push origin feature/your-feature-name
 ```
-
----
 
 ## 💡 Support
 
-For any issues, please open an **issue** in the GitHub repository or reach out to the team.
+For any issues or questions, please open a new issue on the [GitHub repository](https://www.google.com/search?q=https://github.com/your-org/E-commerce_application/issues).
 
-Happy Coding! 🚀
+-----
+
+```
+
+**Remember to replace:**
+
+* `https://github.com/your-org/E-commerce_application` with the actual URL of your main repository.
+* `<your-forked-repo-url>` with the URL of the repository you forked.
+* `https://github.com/your-username/E-commerce_application` in the Quick Start Commands with your actual GitHub username and repository name.
+* `<your_concurrently_version>` in the root `package.json` with the actual version of `concurrently` that was installed.
+* `your_database_name` in the `.env` example with your actual MongoDB database name.
+
+This `README.md` file provides a comprehensive overview of your project, including setup instructions, development guidelines, contribution process, and coding standards, making it easier for others to understand and contribute to your E-commerce application.
+```
